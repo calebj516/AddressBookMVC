@@ -31,6 +31,7 @@ namespace AddressBookMVC
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
 
+            // Add service to handle images
             services.AddScoped<IImageService, BasicImageService>();
 
             services.AddControllersWithViews();
