@@ -23,6 +23,8 @@ namespace AddressBookMVC
         {
             var host = CreateHostBuilder(args).Build();
 
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
             var dbContext = host.Services
                                 .CreateScope().ServiceProvider
                                 .GetRequiredService<ApplicationDbContext>();
