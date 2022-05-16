@@ -29,7 +29,7 @@ namespace AddressBookMVC
         {
             // Add the service that allows the application to communicate with the database
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseNpgsql(DataUtility.GetConnectionString(Configuration)));
 
             // Add service to handle images
             services.AddScoped<IImageService, BasicImageService>();
